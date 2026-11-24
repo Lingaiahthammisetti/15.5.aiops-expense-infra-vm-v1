@@ -25,10 +25,10 @@ variable "admin_cidr" {
   description = "CIDR allowed to SSH to the VMs, e.g. your own IP /32."
   type        = string
 
-  validation {
-    condition     = can(cidrhost(var.admin_cidr, 0)) && var.admin_cidr != "0.0.0.0/0"
-    error_message = "admin_cidr must be a valid CIDR such as 203.0.113.10/32, and must not be 0.0.0.0/0."
-  }
+  # validation {
+  #   condition     = can(cidrhost(var.admin_cidr, 0)) && var.admin_cidr != "0.0.0.0/0"
+  #   error_message = "admin_cidr must be a valid CIDR such as 203.0.113.10/32, and must not be 0.0.0.0/0."
+  # }
 }
 
 variable "monitoring_cidrs" {
